@@ -1,0 +1,26 @@
+@(facil: List[Facilities])
+@main("Qurilmalar") {
+    @navbar("facil")
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Qurilma nomi</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            @for(i <- facil) {
+                <tr>
+                    <td>@i.name</td>
+                    <td><img src="@routes.Assets.at("images/"+i.image)"/></td>
+                    <td><a href="@routes.Ambulance.remove(i.id.get)" class="btn btn-danger">O'chirish</a> <a class="btn btn-info">Batafsil</a></td>
+                </tr>
+            }
+            </tbody>
+
+        </table>
+    </div>
+    @footer()
+}

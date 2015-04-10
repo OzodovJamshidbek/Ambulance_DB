@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET        /                     controllers.Application.index
+GET        /facilities           controllers.Ambulance.show
+GET        /rugs                 controllers.Ambulance.showrug
+GET        /doctor               controllers.Application.showdoc
+GET        /facilities/new       controllers.Ambulance.showAddForm
+POST       /facilities/new       controllers.Ambulance.add
+GET        /facility/:id/remove  controllers.Ambulance.remove(id: Int)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file         controllers.Assets.at(path="/public", file)
+
+    

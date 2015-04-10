@@ -1,0 +1,23 @@
+@(act: String)
+<nav class="navbar navbar-fixed-top" style="background-color: crimson; border-bottom: 3px #ffffff solid; border-top: 3px #ffffff solid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span style="font-size: large" class="glyphicon glyphicon-align-justify"></span>
+        </button>
+        <a  href="@routes.Application.index()">
+            <img width="80px" height="50px" src="@routes.Assets.at("images/6.jpg")"/>
+        </a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav nav">
+            @*<li><img width="80px" height="50px" src="@routes.Assets.at("images/6.jpg")"/></li>*@
+            <li class="@if(act=="amb"){active}"><a href="@routes.Application.index()"><b>Tez yordam</b></a></li>
+            <li class="@if(act=="rug"){active}"><a  href="@routes.Ambulance.showrug()"><b>Dorilar</b></a></li>
+            <li class="@if(act=="facil"){active}"><a   href="@routes.Ambulance.show()"><b>Qurilmalar</b></a></li>
+            <li class="@if(act=="doc"){active}"><a   href="@routes.Application.showdoc()"><b>Shifokor huzurida</b></a></li>
+            <li class="@if(act=="doc"){active}"><a   href="@routes.Ambulance.add()"><b>Qurilma kiritish</b></a></li>
+        </ul>
+    </div>
+</nav>
+<div style="margin-bottom: 70px"></div>

@@ -1,0 +1,30 @@
+@(rug: List[rug])
+@main("Dorilar") {
+    @navbar("rug")
+    <div class="container">
+    @for(i<-rug){
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+            @i.name
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="@routes.Assets.at("images/"+i.image)"/>
+                    </div>
+                    <div class="col-md-7">
+                        <h4>Foydasi</h4>
+                        <p>@i.pro</p>
+                        <h4>Qo'llanma</h4>
+                        <p>@i.infor</p>
+                    </div>
+                    <div class="col-md-1">
+                        <h4 class="text-danger">@if(i.res){Yangi}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+    @footer()
+}
