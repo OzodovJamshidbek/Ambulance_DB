@@ -1,0 +1,24 @@
+@(com: List[Company])
+    @main("Company") {
+        @navbar("company")
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Kompaniya nomi</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @for(i <- com) {
+                    <tr>
+                        <td>@i.name</td>
+                        <td><a href="@routes.Ambulance.removecom(i.id.get)" class="btn btn-danger">O'chirish</a> <a href="@routes.Ambulance.showeditformcompany(i.id.get)" class="btn btn-warning">O'zgartirish</a></td>
+                    </tr>
+                }
+                </tbody>
+
+            </table>
+        </div>
+        @footer()
+    }

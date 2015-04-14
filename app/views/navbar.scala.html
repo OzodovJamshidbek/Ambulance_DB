@@ -16,7 +16,9 @@
             <li class="@if(act=="rug"){active}"><a  href="@routes.Ambulance.showrug()"><b>Dorilar</b></a></li>
             <li class="@if(act=="facil"){active}"><a   href="@routes.Ambulance.show()"><b>Qurilmalar</b></a></li>
             <li class="@if(act=="doc"){active}"><a   href="@routes.Application.showdoc()"><b>Shifokor huzurida</b></a></li>
-            <li class="@if(act=="doc"){active}"><a   href="@routes.Ambulance.add()"><b>Qurilma kiritish</b></a></li>
+            <li class="@if(act=="add"){active}"><a   href="@routes.Ambulance.add()"><b>Qurilma kiritish</b></a></li>
+            <li class="@if(act=="addcom"){active}"><a   href="@routes.Ambulance.addcompany()"><b>Komponiya kiritish</b></a></li>
+            <li class="@if(act=="company"){active}"><a   href="@routes.Ambulance.listcompany()"><b>Komponiyalar</b></a></li>
         </ul>
     </div>
 </nav>

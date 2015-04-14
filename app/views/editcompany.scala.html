@@ -1,0 +1,18 @@
+@(com:Company)
+
+@main("Edit Company") {
+
+    @navbar("add")
+
+    <div class="container main-content">
+        <h2 class="text-center">Yangi Company qo'shish</h2>
+        <form class="@routes.Ambulance.updatecom(com.id.get)"  method="post">
+            <div class="form-group">
+                <label for="inp-name">Name</label>
+                <input type="text" class="form-control" id="inp-name" value="@com.name"
+                name="name" required="">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+}

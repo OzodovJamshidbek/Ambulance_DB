@@ -1,0 +1,18 @@
+@()
+
+@main("Add Company") {
+
+    @navbar("addcom")
+
+    <div class="container main-content">
+        <h2 class="text-center">Yangi Company qo'shish</h2>
+        <form class="@routes.Ambulance.addcompany()"  method="post">
+            <div class="form-group">
+                <label for="inp-name">Name</label>
+                <input type="text" class="form-control" id="inp-name"
+                name="name" required="">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+}

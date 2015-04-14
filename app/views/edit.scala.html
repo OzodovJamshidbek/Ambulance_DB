@@ -1,29 +1,29 @@
-@(com:List[Company])
+@(facil:Facilities,com:List[Company])
 
-@main("Add") {
+@main("Edit") {
 
-    @navbar("add")
+    @navbar("edit")
 
     <div class="container main-content">
         <h2 class="text-center">Yangi qurilma qo'shish</h2>
-        <form class="@routes.Ambulance.add()"  method="post">
+        <form class="@routes.Ambulance.update(facil.id.get)"  method="post">
             <div class="form-group">
                 <label for="inp-image">Image</label>
                 <input type="text" class="form-control" id="inp-image"
-                name="image" required="">
+                name="image" value="@facil.image">
             </div>
             <div class="form-group">
                 <label for="inp-name">Name</label>
                 <input type="text" class="form-control" id="inp-name"
-                name="name" required="">
+                name="name" required="" value="@facil.name">
             </div>
             <div class="form-group">
                 <label for="inp-company">Company</label>
-               <select name="companyid" id="inp-company" class="form-control">
-                   @for(i<-com){
-                       <option value="@i.id">@i.name</option>
-                   }
-               </select>
+                <select name="companyid" id="inp-company" class="form-control" >
+                @for(i<-com){
+                    <option value="@i.id">@i.name</option>
+                }
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

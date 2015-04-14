@@ -3,16 +3,25 @@
 # ~~~~
 
 # Home page
-GET        /                     controllers.Application.index
-GET        /facilities           controllers.Ambulance.show
-GET        /rugs                 controllers.Ambulance.showrug
-GET        /doctor               controllers.Application.showdoc
-GET        /facilities/new       controllers.Ambulance.showAddForm
-POST       /facilities/new       controllers.Ambulance.add
-GET        /facility/:id/remove  controllers.Ambulance.remove(id: Int)
+GET         /                           controllers.Application.index
+GET         /facilities                 controllers.Ambulance.show
+GET         /rugs                       controllers.Ambulance.showrug
+GET         /doctor                     controllers.Application.showdoc
+GET         /facilities/new             controllers.Ambulance.showAddForm
+GET         /company/list               controllers.Ambulance.listcompany
+POST        /facilities/new             controllers.Ambulance.add
+GET         /facility/:id/remove        controllers.Ambulance.remove(id: Int)
+POST        /facility/:id/edit          controllers.Ambulance.update(id:Int)
+GET         /facility/:id/edit          controllers.Ambulance.showeditform(id: Int)
+
+GET         /company/new                controllers.Ambulance.showaddformcompany
+POST        /company/new                controllers.Ambulance.addcompany
+GET         /company/:id/remove         controllers.Ambulance.removecom(id: Int)
+POST        /company/:id/edit           controllers.Ambulance.updatecom(id:Int)
+GET         /company/:id/edit           controllers.Ambulance.showeditformcompany(id: Int)
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file         controllers.Assets.at(path="/public", file)
+GET         /assets/*file               controllers.Assets.at(path="/public", file)
 
     
